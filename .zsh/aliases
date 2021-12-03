@@ -1,0 +1,32 @@
+# Use: `long_running_bin && notifyDone`
+alias notifyDone="alerter -message \"Done with task! Exit status: $?\" -sound default -sender com.googlecode.iterm2 -activate com.googlecode.iterm2"
+
+# serve wd as http on 8000
+alias serve='python -m SimpleHTTPServer 8000'
+
+# manage dotfiles' git with `dotfiles`
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+
+# git
+alias gc='git commit'
+alias gco='git checkout'
+alias gr='git reset'
+alias grb='git rebase'
+alias grh='git reset --hard'
+alias gs='git status'
+
+# js
+alias nom='rm -rf node_modules && yarn'
+alias nr='npm run'
+alias y='yarn'
+alias yr='y run'
+
+# mighty
+
+alias mp="ssh mp"
+alias md="ssh md"
+alias mc="ssh mc"
+alias tmp="tssh mp"
+alias tmd="tssh md"
+alias tmc="tssh mc"
+

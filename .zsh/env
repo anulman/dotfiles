@@ -1,0 +1,6 @@
+export EDITOR="vim"
+export SHELL="/bin/zsh"
+
+# Prefer Homebrew bins to default ones
+export PATH=/opt/homebrew/bin:$PATH
+export PROMPT='%F{242}%2~%f %# '
