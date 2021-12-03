@@ -6,3 +6,84 @@ function copy_sensitive_dotfiles_to_host() {
   rsync -r $HOME/.ssh/ $@:.ssh/old
   rsync $HOME/.gnupg/ $@:.gnupg/old
 }
+
+function f () { # Find file in cwd
+  find . -name "*$**"
+}
+
+function fcd() { # Find directory under cwd and cd into it
+  target=$(find . -name "*$**" -type d | head -n1)
+  if [ "$target" ]; then
+    cd "$target"
+  else
+    echo "Directory not found: $*"; return
+  fi
+}
+
+function gg () { # Double-grep (grep with files resulting of the first grep)
+  grep -Irl ${1} . | xargs grep -I ${2}
+}
+
+function random () { # Print a random number between two input values. (Default 1,n or 0,1)
+  a="$1"
+  b="$2"
+  if [ ! "$a" ]; then
+    a="0";
+    b="1";
+  elif [ ! "$b" ]; then
+    b="$a";
+    a="1";
+  fi
+  range="$[ $b - $a + 1]";
+  echo "$[ ( $RANDOM % $range ) + $a ]";
+}
+
+bin_go="$(which go)"
+function go() { # Jump to a project (and activate environment)
+  to=$1
+  if [ ! "$to" ]; then
+    # Go to the last go'ne destination
+    to=$(grep "^go " ~/.bash_history | tail -n1 | cut -d ' ' -f2-)
+  fi
+
+  target=$PROJECTS_DIR/$to
+  if [ -d $target ]; then
+    cd "$target"
+
+    # Load project profile (e.g. virtualenv)
+    [ -e .profile ] && . .profile
+  elif [ "$bin_go" ]; then
+    $bin_go $*
+    return
+  fi
+}
+
+function up() { # cd to root of repository
+  old_pwd="$PWD";
+  while [ 1 ]; do
+    cd ..
+    if [ "$PWD" == "/" ]; then
+      cd "$old_pwd"
+      echo "No repository found, returned to $PWD"
+      return 1
+    fi
+    for repo in ".git" ".hg"; do
+      if [ -d "$repo" ]; then
+        echo "Found $repo at $PWD"
+        return 0;
+      fi
+    done
+  done
+}
+
+function whois() { # whois but slightly less bad (parse domains out of urls)
+  parts=(${1//\// });
+  domain="${parts[1]}"
+
+  if [ ! "$domain" ] || [[ "$domain" != *.* ]]; then
+    domain="${parts[0]}"
+  fi
+
+  $(which whois) "${domain/www./}"
+  return $?;
+}

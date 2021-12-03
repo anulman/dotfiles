@@ -56,7 +56,7 @@ function random () { # Print a random number between two input values. (Default 
 # Workspace navigation functions
 
 PROJECTS_DIR=~/dev
-BIN_GO="$(which go)"
+bin_go="$(which go)"
 function go() { # Jump to a project (and activate environment)
     to=$1
     if [ ! "$to" ]; then
@@ -70,8 +70,8 @@ function go() { # Jump to a project (and activate environment)
 
         # Load project profile (e.g. virtualenv)
         [ -e .profile ] && . .profile
-    elif [ "$BIN_GO" ]; then
-        $BIN_GO $*
+    elif [ "$bin_go" ]; then
+        $bin_go $*
         return
     fi
 }
@@ -125,7 +125,7 @@ function up() { # cd to root of repository
     done
 }
 
-function whois() { # whois but slightly less lame (parse domains out of urls)
+function whois() { # whois but slightly less bad (parse domains out of urls)
     parts=(${1//\// });
     domain="${parts[1]}"
 
