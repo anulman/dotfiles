@@ -1,0 +1,18 @@
+[core]
+	excludesfile = /Users/anulman/.gitignore_global
+[user]
+	name = @anulman
+	email = anulman@gmail.com
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[alias]
+	lg = log --color --graph --shortstat --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg-ascii = log --graph --pretty=format:'%h - %d %s (%ci) <%an>' --abbrev-commit
+  open = !vim `git-open.sh`
+[init]
+	defaultBranch = production
