@@ -6,4 +6,4 @@ source $HOME/.zsh/git
 source $HOME/.zsh/javascript
 
 # Hook up direnv
-eval "$(direnv hook bash)"
+eval "$(direnv hook zsh)"
