@@ -131,7 +131,7 @@ alias tmc="tssh mc"
 # gcloud autocompletion
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
-alias gitconfig="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 # Hook up direnv
 eval "$(direnv hook bash)"
