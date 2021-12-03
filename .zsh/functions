@@ -1,3 +1,8 @@
 function tssh() {
   ssh $@ -t 'tmux -CC attach'
 }
+
+function copy_sensitive_dotfiles_to_host() {
+  rsync -r $HOME/.ssh/ $@:.ssh/old
+  rsync $HOME/.gnupg/ $@:.gnupg/old
+}

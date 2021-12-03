@@ -14,6 +14,7 @@ git --git-dir=$HOME/.cfg --work-tree=$HOME checkout
 ### After Installation
 
 - Load `.itermbindings.itermkeymap` into iterm
+- Run the `copy_sensitive_dotfiles_to_host` function, e.g. `copy_sensitive_dotfiles_to_host anulman@192.168.x.y`
 
 ## History
 These were created by roughly following the process [described on Ackama's blog](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/), i.e.
