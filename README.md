@@ -11,6 +11,10 @@ git --git-dir=$HOME/.cfg --work-tree=$HOME checkout
 # The `.zsh/aliases` file will then create a `dotfiles` alias to `git` with the appropriate options.
 ```
 
+### After Installation
+
+- Load `.itermbindings.itermkeymap` into iterm
+
 ## History
 These were created by roughly following the process [described on Ackama's blog](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/), i.e.
 

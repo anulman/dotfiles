@@ -1,84 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" Plugins
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'dense-analysis/ale'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'slim-template/vim-slim'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'rizzatti/dash.vim'
-Plugin 'terryma/vim-expand-region'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'motemen/git-vim'
-Plugin 'junegunn/fzf'
-
-"" Language support
-if $GOPATH != ""
-  Plugin 'fatih/vim-go'
-endif
-Plugin 'amirh/HTML-AutoCloseTag'
-Plugin 'leshill/vim-json'
-Plugin 'vim-scripts/closetag.vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'Shougo/neocomplcache'
-Plugin 'Shougo/neosnippet'
-Plugin 'honza/vim-snippets'
-Plugin 'mhinz/vim-mix-format'
-Plugin 'slashmili/alchemist.vim' " elixir
-Plugin 'justmao945/vim-clang' " clang
-Plugin 'prettier/vim-prettier' " prettier
-
-"" Syntax highlighting
-Plugin 'leafgarland/typescript-vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'shazow/html5.vim'
-Plugin 'ap/vim-css-color'
-Plugin 'groenewege/vim-less'
-Plugin 'skwp/vim-rspec'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-git'
-Plugin 'chrisbra/csv.vim'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'mmalecki/vim-node.js'
-Plugin 'timcharper/textile.vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'hsanson/vim-android'
-Plugin 'gcorne/vim-sass-lint'
-Plugin 'elixir-editors/vim-elixir'
-
-" Colour schemes
-Plugin 'brendonrapp/smyck-vim'
-Plugin 'junegunn/vim-emoji'
-
-Plugin 'editorconfig/editorconfig-vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
+" Using `vim-plug`, see https://github.com/junegunn/vim-plug
+call plug#begin()
+so ./.vimplugs " sources our neighbour file
+call plug#end()
 
 colorscheme smyck
 filetype plugin indent on    " required

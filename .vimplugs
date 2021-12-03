@@ -1,0 +1,64 @@
+" Plugins
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'dense-analysis/ale'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'slim-template/vim-slim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'rizzatti/dash.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'xolox/vim-misc'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'motemen/git-vim'
+Plug 'junegunn/fzf'
+
+"" Language support
+if $GOPATH != ""
+  Plugin 'fatih/vim-go'
+endif
+Plug 'vim-scripts/HTML-AutoCloseTag'
+Plug 'leshill/vim-json'
+Plug 'vim-scripts/closetag.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'Shougo/neocomplcache'
+Plug 'Shougo/neosnippet'
+Plug 'honza/vim-snippets'
+Plug 'mhinz/vim-mix-format'
+Plug 'slashmili/alchemist.vim' " elixir
+Plug 'justmao945/vim-clang' " clang
+Plug 'prettier/vim-prettier' " prettier
+
+"" Syntax highlighting
+Plug 'leafgarland/typescript-vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'shazow/html5.vim'
+Plug 'ap/vim-css-color'
+Plug 'groenewege/vim-less'
+Plug 'skwp/vim-rspec'
+Plug 'vim-ruby/vim-ruby'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-git'
+Plug 'chrisbra/csv.vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mmalecki/vim-node.js'
+Plug 'timcharper/textile.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'hsanson/vim-android'
+Plug 'gcorne/vim-sass-lint'
+Plug 'elixir-editors/vim-elixir'
+
+" Colour schemes
+Plug 'brendonrapp/smyck-vim'
+Plug 'junegunn/vim-emoji'
+
+Plug 'editorconfig/editorconfig-vim'
