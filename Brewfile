@@ -8,6 +8,7 @@ brew "direnv"
 brew "github-keygen"
 brew "gh"
 brew "gnupg"
+brew "jq"
 brew "mas"
 brew "nvm"
 brew "pyenv"
@@ -60,3 +61,7 @@ cask "vnc-viewer"
 cask "whatsapp"
 cask "zoom"
 cask "zotero"
+
+mas "XCode", id: 497799835
+mas "Shush - Microphone Manager", id: 496437906
+mas "Magnet", id: 441258766
