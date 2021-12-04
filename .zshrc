@@ -7,3 +7,10 @@ source $HOME/.zsh/javascript
 
 # Hook up direnv
 eval "$(direnv hook zsh)"
+
+# Turn on autocompletion, with select box
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+
+setopt autocd
+hash -d go=$HOME/dev
