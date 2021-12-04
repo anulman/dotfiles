@@ -3,7 +3,7 @@ filetype off                  " required
 
 " Using `vim-plug`, see https://github.com/junegunn/vim-plug
 call plug#begin()
-so ./.vimplugs " sources our neighbour file
+so $HOME/.vimplugs " sources our neighbour file
 call plug#end()
 
 colorscheme smyck
