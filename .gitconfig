@@ -1,18 +1,24 @@
 [core]
-	excludesfile = /Users/anulman/.gitignore_global
+  excludesfile = /Users/anulman/.gitignore_global
 [user]
-	name = @anulman
-	email = anulman@gmail.com
+  name = @anulman
+  email = anulman@gmail.com
 [push]
-	default = simple
+  default = simple
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
-	process = git-lfs filter-process
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
 [alias]
-	lg = log --color --graph --shortstat --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
-	lg-ascii = log --graph --pretty=format:'%h - %d %s (%ci) <%an>' --abbrev-commit
+  lg = log --color --graph --shortstat --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg-ascii = log --graph --pretty=format:'%h - %d %s (%ci) <%an>' --abbrev-commit
   open = !vim `git-open.sh`
 [init]
-	defaultBranch = production
+  defaultBranch = production
+[format]
+  pretty = format:%C(brightblue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(normal)%s %C(magenta) [%an]%Creset
+[diff]
+  colorMoved = default
+[interactive]
+  diffFilter = delta --color-only
