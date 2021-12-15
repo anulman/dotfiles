@@ -20,5 +20,3 @@
   pretty = format:%C(brightblue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(normal)%s %C(magenta) [%an]%Creset
 [diff]
   colorMoved = default
-[interactive]
-  diffFilter = delta --color-only
