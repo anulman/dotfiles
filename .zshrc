@@ -14,3 +14,6 @@ zstyle ':completion:*' menu select
 
 setopt autocd
 hash -d go=$HOME/dev
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
