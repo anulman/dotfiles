@@ -6,6 +6,7 @@ alias serve='python -m SimpleHTTPServer 8000'
 
 # manage dotfiles' git with `dotfiles`
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias df="dotfiles"
 
 # git
 alias gc='git commit'
