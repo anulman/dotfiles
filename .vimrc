@@ -1,6 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Required before plugins are initialized/used
+let g:ale_disable_lsp = 1
+
 " Using `vim-plug`, see https://github.com/junegunn/vim-plug
 call plug#begin()
 so $HOME/.vimplugs " sources our neighbour file
@@ -115,6 +118,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Automatic formatting
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufWritePre *.go :%s/\s\+$//e
 autocmd BufWritePre *.haml :%s/\s\+$//e
@@ -304,12 +309,46 @@ nmap <leader>hl :nohl<CR>
     set completeopt-=preview
 " }
 
+" Coc
+" ========
+let g:coc_global_extensions = [
+\ 'coc-tsserver'
+\ ]
+
+if !empty(glob('./.yarn/cache/prettier-*')) || !empty(glob('./node_modules/prettier'))
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if !empty(glob('./.yarn/cache/eslint-*')) || !empty(glob('./node_modules/eslint'))
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
+" display diagnostics in a tooltip
+nnoremap <silent> K :call CocAction('doHover')<CR>
+function! ShowDocIfNoDiagnostic(timer_id)
+  if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+    silent call CocActionAsync('doHover')
+  endif
+endfunction
+
+function! s:show_hover_doc()
+  call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+autocmd CursorHoldI * :call <SID>show_hover_doc()
+autocmd CursorHold * :call <SID>show_hover_doc()
+
+nmap <silent> <Leader>gg <Plug>(coc-definition)
+nmap <silent> <Leader>gy <Plug>(coc-type-definition)
+nmap <silent> <Leader>gr <Plug>(coc-references)
+nmap <leader>do <Plug>(coc-codeaction)
+
 " Ale
 " =========
-let g:ale_completion_enabled = 1
-let g:ale_completion_tsserver_autoimport = 1
+let g:ale_completion_enabled = 0
+let g:ale_completion_tsserver_autoimport = 0
 let g:ale_linters_explicit = 1
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_fixers = ['eslint']
 let g:ale_linters = {
 \   'javascript': ['eslint'],
@@ -344,3 +383,42 @@ let g:mix_format_options = '--check-equivalent'
 " ========
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
+" vim-rzip
+" ========
+" Decode URI encoded characters
+function! DecodeURI(uri)
+  return substitute(a:uri, '%\([a-fA-F0-9][a-fA-F0-9]\)', '\=nr2char("0x" . submatch(1))', "g")
+endfunction
+
+" Attempt to clear non-focused buffers with matching name
+function! ClearDuplicateBuffers(uri)
+  " if our filename has URI encoded characters
+  if DecodeURI(a:uri) !=# a:uri
+    " wipeout buffer with URI decoded name - can print error if buffer in focus
+    sil! exe "bwipeout " . fnameescape(DecodeURI(a:uri))
+    " change the name of the current buffer to the URI decoded name
+    exe "keepalt file " . fnameescape(DecodeURI(a:uri))
+    " ensure we don't have any open buffer matching non-URI decoded name
+    sil! exe "bwipeout " . fnameescape(a:uri)
+  endif
+endfunction
+
+function! RzipOverride()
+  " Disable vim-rzip's autocommands
+  autocmd! zip BufReadCmd   zipfile:*,zipfile:*/*
+  exe "au! zip BufReadCmd ".g:zipPlugin_ext
+
+  " order is important here, setup name of new buffer correctly then fallback to vim-rzip's handling
+  autocmd zip BufReadCmd   zipfile:*  call ClearDuplicateBuffers(expand("<afile>"))
+  autocmd zip BufReadCmd   zipfile:*  call rzip#Read(DecodeURI(expand("<afile>")), 1)
+
+  if has("unix")
+    autocmd zip BufReadCmd   zipfile:*/*  call ClearDuplicateBuffers(expand("<afile>"))
+    autocmd zip BufReadCmd   zipfile:*/*  call rzip#Read(DecodeURI(expand("<afile>")), 1)
+  endif
+
+  exe "au zip BufReadCmd ".g:zipPlugin_ext."  call rzip#Browse(DecodeURI(expand('<afile>')))"
+endfunction
+
+autocmd VimEnter * call RzipOverride()

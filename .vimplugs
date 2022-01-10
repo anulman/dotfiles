@@ -20,6 +20,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'motemen/git-vim'
 Plug 'junegunn/fzf'
 
+" required for yarn jump-to-definition
+:runtime plugin/zipPlugin.vim
+Plug 'lbrayner/vim-rzip'
+
 "" Language support
 if $GOPATH != ""
   Plugin 'fatih/vim-go'
@@ -35,6 +39,7 @@ Plug 'mhinz/vim-mix-format'
 Plug 'slashmili/alchemist.vim' " elixir
 Plug 'justmao945/vim-clang' " clang
 Plug 'prettier/vim-prettier' " prettier
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " language completion server
 
 "" Syntax highlighting
 Plug 'leafgarland/typescript-vim'
