@@ -310,6 +310,8 @@ nmap <leader>hl :nohl<CR>
 " }
 
 " Coc
+" - lots of this config based on
+"   https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
 " ========
 let g:coc_global_extensions = [
 \ 'coc-tsserver'
