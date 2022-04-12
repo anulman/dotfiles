@@ -4,6 +4,7 @@ source $HOME/.zsh/functions
 
 source $HOME/.zsh/git
 source $HOME/.zsh/javascript
+source $HOME/.zsh/python
 
 # Hook up direnv
 eval "$(direnv hook zsh)"
