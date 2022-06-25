@@ -8,6 +8,9 @@ alias serve='python -m SimpleHTTPServer 8000'
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias df="dotfiles"
 
+# vim
+alias nv="nvim"
+
 # git
 alias gc='git commit'
 alias gco='git checkout'
