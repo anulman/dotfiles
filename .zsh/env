@@ -9,3 +9,9 @@ export PATH=$PATH:/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sd
 export PATH=$PATH:$HOME/.yarn/bin
 
 export PROMPT='%F{242}%2~%f %# '
+
+if [[ `uname` == "Darwin" ]]; then
+  # Ensure we build for arm64 by default
+  export npm_config_arch=arm64
+  export npm_config_target_arch=arm64
+fi
