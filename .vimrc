@@ -30,7 +30,9 @@ set modelines=0
 set shiftwidth=2
 set clipboard=unnamed
 set synmaxcol=128
-set ttyscroll=10
+if !has('nvim')
+  set ttyscroll=10
+endif
 set encoding=utf-8
 set tabstop=2
 set nowrap
@@ -308,6 +310,10 @@ nmap <leader>hl :nohl<CR>
     " especially when splits are used.
     set completeopt-=preview
 " }
+
+" Copilot
+" =======
+let g:copilot_node_command = "~/.nodenv/versions/16.15.0/bin/node"
 
 " Coc
 " - lots of this config based on

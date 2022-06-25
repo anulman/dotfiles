@@ -3,7 +3,9 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
-Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+if !has('nvim')
+  Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+endif
 Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -40,6 +42,7 @@ Plug 'slashmili/alchemist.vim' " elixir
 Plug 'justmao945/vim-clang' " clang
 Plug 'prettier/vim-prettier' " prettier
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " language completion server
+Plug 'github/copilot.vim'
 
 "" Syntax highlighting
 Plug 'leafgarland/typescript-vim'
@@ -61,6 +64,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'hsanson/vim-android'
 Plug 'gcorne/vim-sass-lint'
 Plug 'elixir-editors/vim-elixir'
+Plug 'tomlion/vim-solidity'
 
 " Colour schemes
 Plug 'brendonrapp/smyck-vim'
