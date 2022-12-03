@@ -25,6 +25,8 @@ export ANDROID_HOME=$ANDROID_SDK_ROOT
 # export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/22.0.1
 export PATH=$PATH:$HOME/dev/dotfiles/.bin
 export PATH=$PATH:$HOME/.asdf/installs/elixir/1.8.1/.mix/escripts
+# add llvm & clangd to PATH
+export PATH=/opt/homebrew/opt/llvm/bin:$PATH
 export GOPATH=/Users/anulman/dev/gopath
 export GOBIN=$GOPATH/bin
 

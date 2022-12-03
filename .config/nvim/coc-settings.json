@@ -1,4 +1,6 @@
 {
+  "clangd.path": "clangd",
+  "clangd.arguments": ["--clang-tidy"],
   "diagnostic.displayByAle": true,
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
