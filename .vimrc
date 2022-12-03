@@ -203,7 +203,7 @@ function s:UpdateNERDTree(...)
 endfunction
 
 " FZF
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:fzf_layout = {'down': '~10'}
 
 autocmd! FileType fzf
