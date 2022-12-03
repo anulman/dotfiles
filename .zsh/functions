@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 function tssh() {
   ssh $@ -t 'tmux -CC attach'
 }
@@ -86,4 +88,12 @@ function whois() { # whois but slightly less bad (parse domains out of urls)
 
   $(which whois) "${domain/www./}"
   return $?;
+}
+
+function gpu() { # `git push -u` shortcut
+  if [[ "$@" =~ "^\s*$" ]]; then
+    git push -u origin HEAD
+  else
+    git push -u $@
+  fi
 }
