@@ -24,13 +24,4 @@ alias nom='rm -rf node_modules && yarn'
 alias nr='npm run'
 alias y='yarn'
 alias yr='y run'
-
-# mighty
-
-alias mp="ssh mp"
-alias md="ssh md"
-alias mc="ssh mc"
-alias tmp="tssh mp"
-alias tmd="tssh md"
-alias tmc="tssh mc"
-
+alias p='pnpm'
