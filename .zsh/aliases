@@ -11,6 +11,9 @@ alias df="dotfiles"
 # vim
 alias nv="nvim"
 
+# focus - https://github.com/ayoisaiah/focus
+alias f="focus"
+
 # git
 alias gc='git commit'
 alias gco='git checkout'
@@ -25,3 +28,5 @@ alias nr='npm run'
 alias y='yarn'
 alias yr='y run'
 alias p='pnpm'
+alias pa='pnpm add'
+alias pr='pnpm run'

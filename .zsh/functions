@@ -9,10 +9,6 @@ function copy_sensitive_dotfiles_to_host() {
   rsync $HOME/.gnupg/ $@:.gnupg/old
 }
 
-function f () { # Find file in cwd
-  find . -name "*$**"
-}
-
 function fcd() { # Find directory under cwd and cd into it
   target=$(find . -name "*$**" -type d | head -n1)
   if [ "$target" ]; then
