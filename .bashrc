@@ -55,50 +55,6 @@ function random () { # Print a random number between two input values. (Default 
 
 # Workspace navigation functions
 
-PROJECTS_DIR=~/dev
-bin_go="$(which go)"
-function go() { # Jump to a project (and activate environment)
-    to=$1
-    if [ ! "$to" ]; then
-        # Go to the last go'ne destination
-        to=$(grep "^go " ~/.bash_history | tail -n1 | cut -d ' ' -f2-)
-    fi
-
-    target=$PROJECTS_DIR/$to
-    if [ -d $target ]; then
-        cd "$target"
-
-        # Load project profile (e.g. virtualenv)
-        [ -e .profile ] && . .profile
-    elif [ "$bin_go" ]; then
-        $bin_go $*
-        return
-    fi
-}
-
-function _complete_go() { # Autocomplete function for go
-    COMPREPLY=( $(compgen -W "$(ls $PROJECTS_DIR/)" -- "${COMP_WORDS[$COMP_CWORD]}") )
-}
-complete -F _complete_go go
-
-BIN_GOV="$(which gov)"
-function gov() { # Load a project in macvim
-    to=$1
-    if [ ! "$to" ]; then
-        # GOV the last gov'ed destination
-        to=$(grep "^gv " ~/.bash_history | tail -n1 | cut -d ' ' -f2-)
-    fi
-
-    target=$PROJECTS_DIR/$to
-    if [ -d $target ]; then
-        cd "$target" && mvim .
-    elif [ "$BIN_GV" ]; then
-        $BIN_GV $*
-        return
-    fi
-}
-complete -F _complete_go gov
-
 function _complete_cheat() { # Autocomplet cheat sheets
     cheat = $(which cheat);
     if [ "$cheat" ]; then
