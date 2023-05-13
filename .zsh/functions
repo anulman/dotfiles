@@ -40,26 +40,6 @@ function random () { # Print a random number between two input values. (Default 
   echo "$[ ( $RANDOM % $range ) + $a ]";
 }
 
-bin_go="$(which go)"
-function go() { # Jump to a project (and activate environment)
-  to=$1
-  if [ ! "$to" ]; then
-    # Go to the last go'ne destination
-    to=$(grep "^go " ~/.bash_history | tail -n1 | cut -d ' ' -f2-)
-  fi
-
-  target=$PROJECTS_DIR/$to
-  if [ -d $target ]; then
-    cd "$target"
-
-    # Load project profile (e.g. virtualenv)
-    [ -e .profile ] && . .profile
-  elif [ "$bin_go" ]; then
-    $bin_go $*
-    return
-  fi
-}
-
 function up() { # cd to root of repository
   old_pwd="$PWD";
   while [ 1 ]; do
