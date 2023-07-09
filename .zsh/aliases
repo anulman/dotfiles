@@ -2,7 +2,8 @@
 alias notifyDone="alerter -message \"Done with task! Exit status: $?\" -sound default -sender com.googlecode.iterm2 -activate com.googlecode.iterm2"
 
 # serve wd as http on 8000
-alias serve='python -m SimpleHTTPServer 8000'
+# alias serve='python -m SimpleHTTPServer 8000'
+alias serve='python -m http.server 8000'
 
 # manage dotfiles' git with `dotfiles`
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
