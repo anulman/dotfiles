@@ -36,5 +36,8 @@ esac
 
 # emscripten
 export EMSDK_QUIET=1
-export EMSDK_DIR="/Users/anulman/dev/emscripten/emsdk"
-source "${EMSDK_DIR}/emsdk_env.sh"
+
+if test -f "/Users/anulman/dev/emscripten/emsdk"; then
+  export EMSDK_DIR="/Users/anulman/dev/emscripten/emsdk"
+  source "${EMSDK_DIR}/emsdk_env.sh"
+fi

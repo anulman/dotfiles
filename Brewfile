@@ -17,6 +17,7 @@ brew "direnv"
 brew "emscripten"
 brew "ffmpeg"
 brew "flyctl"
+brew "fzf"
 brew "getsentry/tools/sentry-cli"
 brew "git-lfs"
 brew "github-keygen"
@@ -69,6 +70,7 @@ cask "keycastr"
 cask "kindle" # todo - where are you?
 cask "kindle-previewer" # todo - where are you?
 cask "krisp"
+cask "linear-linear"
 cask "little-snitch"
 cask "loom"
 cask "mimestream"
@@ -99,3 +101,7 @@ cask "zotero"
 mas "XCode", id: 497799835
 mas "Shush - Microphone Manager", id: 496437906
 mas "Magnet", id: 441258766
+
+# Jam reqs
+brew "yarn"
+brew "mkcert"
