@@ -1,5 +1,5 @@
 [core]
-  excludesfile = /Users/anulman/.gitignore_global
+	excludesfile = /Users/anulman/.gitignore
 [user]
   name = @anulman
   email = anulman@gmail.com

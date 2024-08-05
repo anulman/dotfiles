@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/anulman/dev/mighty/cloudbox/vapp/docked_tabs'
+let g:netrw_dirhist_9='/Users/anulman/dev/big-computer/heartbeats/.git'
+let g:netrw_dirhist_8='/Users/anulman/dev/big-computer/heartbeats/.yarn'
+let g:netrw_dirhist_7='/Users/anulman/dev/mighty/cloudbox/chrome_extension/mighty-commands/src/background'
+let g:netrw_dirhist_6='/Users/anulman/dev/mighty/cloudbox/chrome_extension/mighty-commands/src/background/features/emoji_text_expander'
+let g:netrw_dirhist_5='/Users/anulman/dev/mighty/cloudbox/chrome_extension/mighty-commands/src/background/features'
+let g:netrw_dirhist_4='/Users/anulman/dev/mighty/cloudbox/chrome_extension/mighty-commands/src/background'
+let g:netrw_dirhist_3='/Users/anulman/dev/mighty/cloudbox/chrome_extension/mighty-commands/src/background/features'
+let g:netrw_dirhist_2='/Users/anulman/dev/mighty/cloudbox/chrome_extension/mighty-commands/src/background'
+let g:netrw_dirhist_1='/Users/anulman/dev/mighty/cloudbox/functions/allow_list'

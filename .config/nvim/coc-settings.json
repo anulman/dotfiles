@@ -3,13 +3,16 @@
   "clangd.arguments": ["--clang-tidy"],
   "diagnostic.displayByAle": true,
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": [
+  "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "yaml",
+    "github-actions-workflow"
   ],
   "eslint.format.enable": true,
+  "eslint.quiet": true,
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -28,8 +31,21 @@
       }
     }
   },
-  "prettier.disableSuccessMessage": true,
+  "prettier.documentSelectors": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "yaml",
+    "html",
+    "cpp",
+    "h",
+  ],
   "python.analysis.useLibraryCodeForTypes": true,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "flake8"
+  "python.linting.flake8Path": "flake8",
+  "javascript.showUnused": false,
+  "typescript.showUnused": false,
+  "tsserver.useLocalTsdk": true
 }

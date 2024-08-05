@@ -361,13 +361,15 @@ let g:ale_fixers = ['eslint']
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['eslint'],
+\   'yaml': ['eslint'],
 \}
 
 set omnifunc=ale#completion#OmniFunc
 
 nmap <silent> <Leader>lN <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>ln <Plug>(ale_next_wrap)
-nmap <silent> <Leader>ll <Plug>(ale_fix)
+nmap <silent> <Leader>ll <Plug>(ale_detail)
+nmap <silent> <Leader>lf <Plug>(ale_fix)
 
 
 " Nerdcommenter
@@ -390,7 +392,7 @@ let g:mix_format_options = '--check-equivalent'
 " Prettier
 " ========
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yml,*.yaml PrettierAsync
 
 " vim-rzip
 " ========
