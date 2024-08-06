@@ -311,10 +311,6 @@ nmap <leader>hl :nohl<CR>
     set completeopt-=preview
 " }
 
-" Copilot
-" =======
-let g:copilot_node_command = "~/.nodenv/versions/16.15.0/bin/node"
-
 " Coc
 " - lots of this config based on
 "   https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
