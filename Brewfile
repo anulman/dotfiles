@@ -105,5 +105,8 @@ mas "Shush - Microphone Manager", id: 496437906
 mas "Magnet", id: 441258766
 
 # Jam reqs
-brew "yarn"
+brew "cloudflared"
+brew "dnsmasq"
 brew "mkcert"
+brew "tilt"
+brew "yarn"
