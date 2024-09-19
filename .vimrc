@@ -235,9 +235,9 @@ let g:coc_global_extensions = [
 \ 'coc-tsserver'
 \ ]
 
-if !empty(glob('./.yarn/cache/prettier-*')) || !empty(glob('./node_modules/prettier'))
-  let g:coc_global_extensions += ['coc-prettier']
-endif
+" if !empty(glob('./.yarn/cache/prettier-*')) || !empty(glob('./node_modules/prettier'))
+"   let g:coc_global_extensions += ['coc-prettier']
+" endif
 
 if !empty(glob('./.yarn/cache/eslint-*')) || !empty(glob('./node_modules/eslint'))
   let g:coc_global_extensions += ['coc-eslint']
@@ -268,8 +268,12 @@ nmap <leader>do <Plug>(coc-codeaction)
 let g:ale_completion_enabled = 0
 let g:ale_completion_tsserver_autoimport = 0
 let g:ale_linters_explicit = 1
-let g:ale_fix_on_save = 0
-let g:ale_fixers = ['eslint']
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint'],
+\   'typescript': ['prettier', 'eslint'],
+\   'markdown': ['prettier'],
+\}
 let g:ale_linters = {
 \   'cpp': ['clangtidy', 'cppcheck'],
 \   'javascript': ['eslint'],
