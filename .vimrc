@@ -114,10 +114,10 @@ vmap <silent> <expr> p <sid>Repl()
 set colorcolumn=80
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+noremap <Leader>j <C-w>j
+noremap <Leader>k <C-w>k
+noremap <Leader>h <C-w>h
+noremap <Leader>l <C-w>l
 
 " Automatic formatting
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
