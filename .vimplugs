@@ -34,8 +34,6 @@ Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'leshill/vim-json'
 Plug 'vim-scripts/closetag.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'Shougo/neocomplcache'
-Plug 'Shougo/neosnippet'
 Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-mix-format'
 Plug 'slashmili/alchemist.vim' " elixir
@@ -70,3 +68,8 @@ Plug 'brendonrapp/smyck-vim'
 Plug 'junegunn/vim-emoji'
 
 Plug 'editorconfig/editorconfig-vim'
+
+" AI
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'frankroeder/parrot.nvim', { 'config': { 'providers': { } } }
