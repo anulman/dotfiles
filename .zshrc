@@ -41,3 +41,6 @@ if test -f "/Users/anulman/dev/emscripten/emsdk"; then
   export EMSDK_DIR="/Users/anulman/dev/emscripten/emsdk"
   source "${EMSDK_DIR}/emsdk_env.sh"
 fi
+
+# bun completions
+[ -s "/Users/anulman/.bun/_bun" ] && source "/Users/anulman/.bun/_bun"

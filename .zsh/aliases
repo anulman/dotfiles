@@ -32,6 +32,10 @@ alias p='pnpm'
 alias pa='pnpm add'
 alias pr='pnpm run'
 alias px='pnpm exec'
+alias b='bun'
+alias ba='bun add'
+alias br='bun run'
+alias bx='bun exec'
 
 # jam
 alias jam='~/dev/jam/apiofjam/jam-cli'
