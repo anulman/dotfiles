@@ -1,6 +1,19 @@
 {
   "clangd.path": "clangd",
-  "clangd.arguments": ["--clang-tidy"],
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--header-insertion=iwyu",
+    "--pch-storage=memory",
+    "--log=verbose"
+  ],
+  "clangd.fallbackFlags": [
+    "-std=c++17",
+    "-I/usr/include",
+    "-I/usr/local/include"
+  ],
+  "clangd.trace.server": "verbose",
   "diagnostic.displayByAle": true,
   "eslint.autoFixOnSave": true,
   "eslint.validate": [
@@ -13,24 +26,6 @@
   ],
   "eslint.format.enable": true,
   "eslint.quiet": true,
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "objc", "objcpp"],
-      "rootPatterns": [
-        ".ccls",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls"
-        }
-      }
-    }
-  },
   "prettier.documentSelectors": [
     "javascript",
     "javascriptreact",
