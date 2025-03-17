@@ -14,6 +14,11 @@
     "-I/usr/local/include"
   ],
   "clangd.trace.server": "verbose",
+  "coc": {
+    "preferences": {
+      "formatOnSaveFiletypes": ["javascript", "typescript"]
+    }
+  },
   "diagnostic.displayByAle": true,
   "eslint.validate": [
     "javascript",
@@ -54,6 +59,7 @@
     "cpp",
     "h",
   ],
+  "prettier.eslintIntegration": true,
   "python.analysis.useLibraryCodeForTypes": true,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "flake8",
