@@ -271,6 +271,7 @@ let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 0
 let g:ale_fixers = ['eslint']
 let g:ale_linters = {
+\   'cpp': ['clangtidy', 'cppcheck'],
 \   'javascript': ['eslint'],
 \   'typescript': ['eslint'],
 \   'yaml': ['eslint'],
@@ -304,7 +305,7 @@ let g:mix_format_options = '--check-equivalent'
 " Prettier
 " ========
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yml,*.yaml PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.json,*.graphql,*.yml,*.yaml PrettierAsync
 
 " vim-rzip
 " ========
@@ -312,6 +313,10 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 function! DecodeURI(uri)
   return substitute(a:uri, '%\([a-fA-F0-9][a-fA-F0-9]\)', '\=nr2char("0x" . submatch(1))', "g")
 endfunction
+
+" CPP formatting
+" ==============
+autocmd BufWritePre *.cpp,*.h :silent! %!clang-format
 
 " Attempt to clear non-focused buffers with matching name
 function! ClearDuplicateBuffers(uri)
