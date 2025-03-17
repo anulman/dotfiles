@@ -114,20 +114,20 @@ vmap <silent> <expr> p <sid>Repl()
 set colorcolumn=80
 
 " Quicker window movement
-noremap <Leader>j <C-w>j
-noremap <Leader>k <C-w>k
-noremap <Leader>h <C-w>h
-noremap <Leader>l <C-w>l
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
 
 " Automatic formatting
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-autocmd BufWritePre *.rb :%s/\s\+$//e
-autocmd BufWritePre *.go :%s/\s\+$//e
-autocmd BufWritePre *.haml :%s/\s\+$//e
-autocmd BufWritePre *.html :%s/\s\+$//e
-autocmd BufWritePre *.scss :%s/\s\+$//e
-autocmd BufWritePre *.slim :%s/\s\+$//e
+" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+" autocmd BufWritePre *.rb :%s/\s\+$//e
+" autocmd BufWritePre *.go :%s/\s\+$//e
+" autocmd BufWritePre *.haml :%s/\s\+$//e
+" autocmd BufWritePre *.html :%s/\s\+$//e
+" autocmd BufWritePre *.scss :%s/\s\+$//e
+" autocmd BufWritePre *.slim :%s/\s\+$//e
 
 au BufNewFile * set noeol
 au BufRead,BufNewFile *.go set filetype=go
